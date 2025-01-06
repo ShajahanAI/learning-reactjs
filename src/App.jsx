@@ -1,5 +1,32 @@
+import { UserProfile } from "./components/UserProfile"
+
 export default function App() {
-    return <div>
-            <h1>Hello React!</h1>
-           </div>
+    const callMe = () => {
+        console.log("hello");
+    };
+    
+    return (
+        <UserProfile 
+            username="Bob"
+            age={20}
+            isLoggedIn={false}
+            favouriteFoods={
+                [
+                    {
+                        name: "Pizza",
+                        id: 1
+                    },
+                    {
+                        name: "Burger",
+                        id: 2
+                    },                    
+                    {
+                        name: "Shawarma",
+                        id: 3
+                    }
+                ]
+            }
+            callMe={callMe}
+        />
+        )
 }
