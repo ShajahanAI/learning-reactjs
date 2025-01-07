@@ -1,14 +1,41 @@
 export default function App() {
-    const isAuthenticated = true;
+    // NOT_VERIFIED | VERIFIED | ACCOUNT_DISABLED
+    const USER_STATUS = null;
 
-    return  isAuthenticated ? (
-                <div>
-                    <h1>Welcome new user</h1>
-                </div> 
-            ) : (
-                <div>
-                    <span>You are not logged in</span>
-                </div>
-            );
+    if (USER_STATUS === "NOT_VERIFIED") {
+        return (
+            <div>
+                <span>
+                    You are not verified. Please verify your Email or Mobile Number.
+                </span>
+            </div>
+        );
+    }
+
+    else if (USER_STATUS === "VERIFIED") {
+        return (
+            <div>
+                <span>
+                    You are verified. Congrates! Click here to access your dashboard.
+                </span>
+            </div>
+        )
+    }
+    else if (USER_STATUS == 'ACCOUNT_DISABLED') {
+        return (
+            <div>
+                <span>Your account is disabled</span>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div>
+                <span>
+                    Please contact a system admin.
+                </span>
+            </div>
+        )
+    }
 
 }
