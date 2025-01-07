@@ -1,25 +1,14 @@
-import { UserDetails } from "./components/UserDetails";
-
 export default function App() {
-    const mockUsers = [
-        {
-            id: 1,
-            username: "anson",
-            email: "anson@ansonthedev.com"
-        },
-        {
-            id: 2,
-            username: "michael",
-            email: "michael@ansonthedev.com"
-        }
-    ]
+    const isAuthenticated = true;
 
-    return <div>
-        {mockUsers.map(
-            (user) => {
-                return <UserDetails key={user.id} user={user}/>
-            })}
-        </div>;
-        
+    return  isAuthenticated ? (
+                <div>
+                    <h1>Welcome new user</h1>
+                </div> 
+            ) : (
+                <div>
+                    <span>You are not logged in</span>
+                </div>
+            );
 
 }
