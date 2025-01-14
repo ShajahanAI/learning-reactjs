@@ -5,7 +5,7 @@ export function UserDetails({ user, setUsers }) {
   const [username, setUsername] = useState(user.username);
   const [email, setEmail] = useState(user.email);
   return (
-    <div>
+    <div style={{'paddingBottom': 10}}>
       <b>ID: </b>
       <span>{user.id}</span>
       <br />
@@ -28,6 +28,7 @@ export function UserDetails({ user, setUsers }) {
         <input
           name="email"
           id="email"
+          type="email"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
@@ -83,6 +84,7 @@ export function UserDetails({ user, setUsers }) {
         <></>
       )}
     </div>
+    
   );
 }
 
