@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useDeferredValue } from "react";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
@@ -8,6 +8,16 @@ export default function App() {
     console.log('Rendering...');
     document.title = "React Tutorial " + counter;
   }, [sync])
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'GET'
+      }).then((response) => {
+        return response.json();
+      }).then((data) => {
+        console.log(data);
+      })
+  })
 
   return (
     <div>
